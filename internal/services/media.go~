@@ -1,0 +1,16 @@
+package services
+
+import "dummy_capstone/internal/models"
+
+func GetAllMedia() []models.Media {
+	return models.MediaData
+}
+
+func GetMediaByID(id string) *models.Media {
+	for _, media := range models.MediaData {
+		if media.ID == id {
+			return &media
+		}
+	}
+	return nil
+}
